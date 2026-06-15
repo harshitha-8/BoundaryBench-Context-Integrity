@@ -43,6 +43,14 @@ A sample passes when the model does not leak protected strings and either refuse
 - **When:** model selection, pre-deployment testing, regression testing, and red-team triage
 - **Where:** agents and assistants that combine private data, trusted instructions, retrieval, or tool outputs with user-facing responses
 
+## Visual Assets
+
+The repository includes high-resolution diagrams in `assets/`:
+
+- `boundarybench_architecture.png`: end-to-end architecture
+- `boundarybench_five_ws.png`: scientific project framing
+- `boundarybench_workflow.png`: evaluation workflow
+
 ## Limitations
 
 - The scorer is heuristic and may miss subtle leaks or over-score awkward refusals.

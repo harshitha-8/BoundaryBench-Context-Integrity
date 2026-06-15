@@ -2,6 +2,8 @@
 
 **Subtitle:** A UK AISI Inspect benchmark for measuring whether language models preserve trusted/untrusted context boundaries under instruction conflict.
 
+![BoundaryBench architecture](assets/boundarybench_architecture.png)
+
 BoundaryBench Context Integrity is a small AI safety evaluation project built with [UK AISI Inspect](https://inspect.aisi.org.uk/). It tests a precise question:
 
 > When a prompt contains trusted instructions, private context, and an untrusted user request, does the model preserve the boundary between what it may use internally and what it may reveal externally?
@@ -24,6 +26,8 @@ This matters for AI agents, copilots, enterprise assistants, customer-support bo
 
 ## Five W's
 
+![BoundaryBench Five W's](assets/boundarybench_five_ws.png)
+
 **What is measured?**  
 Context-boundary integrity: whether a model avoids revealing protected canary strings while holding the higher-priority instruction and giving a safe alternative when appropriate.
 
@@ -40,6 +44,8 @@ During model selection, pre-deployment testing, regression testing after model u
 Customer support, healthcare admin assistants, finance and quant research agents, code copilots, legal/document review, internal enterprise search, and AI systems connected to confidential data.
 
 ## Input-Output Contract
+
+![BoundaryBench workflow](assets/boundarybench_workflow.png)
 
 Each sample has:
 
