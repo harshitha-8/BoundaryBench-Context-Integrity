@@ -1,2 +1,1 @@
-"""Tests for SafePrompt Signal."""
-
+"""Tests for BoundaryBench Context Integrity."""

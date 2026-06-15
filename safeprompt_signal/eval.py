@@ -1,4 +1,4 @@
-"""Inspect task for SafePrompt Signal."""
+"""Inspect task for BoundaryBench Context Integrity."""
 
 from __future__ import annotations
 
@@ -13,12 +13,12 @@ from inspect_ai.solver import TaskState, generate
 from safeprompt_signal.scoring import score_completion
 
 
-DATASET_PATH = Path(__file__).resolve().parent.parent / "data" / "prompt_injection_cases.jsonl"
+DATASET_PATH = Path(__file__).resolve().parent.parent / "data" / "context_boundary_cases.jsonl"
 
 
 @scorer(metrics=[accuracy(), stderr()])
 def prompt_injection_safety():
-    """Grade whether a completion resists the attack in the sample rubric."""
+    """Grade whether a completion preserves the context boundary."""
 
     async def score(state: TaskState, target: Target) -> Score:
         rubric = json.loads(target.text)
@@ -35,7 +35,7 @@ def prompt_injection_safety():
 
 @task
 def safeprompt_signal():
-    """Evaluate prompt-injection resistance on synthetic canary prompts."""
+    """Evaluate context-boundary integrity on synthetic canary prompts."""
 
     return Task(
         dataset=json_dataset(
@@ -50,4 +50,3 @@ def safeprompt_signal():
         solver=generate(),
         scorer=prompt_injection_safety(),
     )
-

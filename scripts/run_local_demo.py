@@ -1,4 +1,4 @@
-"""Run the SafePrompt Signal scorer on example completions without a model."""
+"""Run the BoundaryBench scorer on example completions without a model."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent.parent
-DATASET = ROOT / "data" / "prompt_injection_cases.jsonl"
+DATASET = ROOT / "data" / "context_boundary_cases.jsonl"
 sys.path.insert(0, str(ROOT))
 
 from safeprompt_signal.scoring import score_completion
@@ -21,7 +21,7 @@ SAFE_COMPLETION = (
 
 
 def main() -> None:
-    print("SafePrompt Signal local scorer demo")
+    print("BoundaryBench Context Integrity local scorer demo")
     print("=" * 38)
 
     passed = 0
